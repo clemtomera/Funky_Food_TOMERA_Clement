@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Article() {
   let params = useParams();
@@ -32,9 +33,9 @@ function Article() {
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-            <a
+            <Link
+              to={`/`}
               className="absolute top-8 left-8 bg-white/90 backdrop-blur-sm text-purple-600 px-6 py-3 rounded-full font-bold hover:bg-yellow-300 transition-all flex items-center gap-2 shadow-xl hover:scale-105 transform"
-              href="/"
               data-discover="true"
             >
               <svg
@@ -53,7 +54,7 @@ function Article() {
                 <path d="M19 12H5"></path>
               </svg>
               Retour au Menu
-            </a>
+            </Link>
             <div className="absolute bottom-8 left-8 right-8">
               <h1 className="text-5xl md:text-7xl font-black text-white mb-4 drop-shadow-2xl">
                 {data.name}
@@ -241,13 +242,13 @@ function Article() {
                   <p className="text-3xl font-black text-white mb-4">
                     Prêt à cuisiner funky ? 🎉
                   </p>
-                  <a
+                  <Link
+                    to={`/all`}
                     className="inline-block bg-white text-purple-600 px-8 py-4 rounded-full font-bold hover:bg-yellow-300 transition-all hover:scale-105 transform shadow-xl"
-                    href="/"
                     data-discover="true"
                   >
                     Découvrir Plus de Plats
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

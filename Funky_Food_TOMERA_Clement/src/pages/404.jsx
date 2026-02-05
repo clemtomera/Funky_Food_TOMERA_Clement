@@ -15,7 +15,7 @@ function ErrorPage() {
       </p>
       <p className="text-center text-gray-600 mb-12 text-lg">Courage</p>
       <Link
-        className="absolute top-8 left-8 bg-white/90 backdrop-blur-sm text-purple-600 px-6 py-3 rounded-full font-bold hover:bg-yellow-300 transition-all flex items-center gap-2 shadow-xl hover:scale-105 transform"
+        className="absolute top-8 left-8 bg-white/90 backdrop-blur-sm text-purple-600 px-6 py-3 rounded-full font-bold hover:bg-yellow-300 transition-all flex items-center gap-2 shadow-xl hover:scale-105 transform z-10"
         to={`/`}
       >
         <svg

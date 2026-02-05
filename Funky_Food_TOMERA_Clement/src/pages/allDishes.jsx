@@ -1,9 +1,8 @@
 import PlatCard from ".././components/PlatCard.jsx";
-import Header from "../components/Header.jsx";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-function Home() {
+function AllDishes() {
   const [dataPlats, setDataPlats] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -13,7 +12,7 @@ function Home() {
 
   function fetchData() {
     setLoading(true);
-    fetch("https://dummyjson.com/recipes?limit=9")
+    fetch("https://dummyjson.com/recipes")
       .then((response) => response.json())
       .then((data) => {
         setDataPlats(data.recipes);
@@ -23,11 +22,32 @@ function Home() {
 
   return (
     <>
-      <Header></Header>
+      <Link
+        to={`/`}
+        className="absolute top-8 left-8 bg-white/90 backdrop-blur-sm text-purple-600 px-6 py-3 rounded-full font-bold hover:bg-yellow-300 transition-all flex items-center gap-2 shadow-xl hover:scale-105 transform"
+        data-discover="true"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          className="lucide lucide-arrow-left size-5"
+        >
+          <path d="m12 19-7-7 7-7"></path>
+          <path d="M19 12H5"></path>
+        </svg>
+        Retour au Menu
+      </Link>
       <div className="bg-white px-4 py-12">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl font-black text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500">
-            Notre Menu Groovy
+            Tous les plats
           </h2>
           <p className="text-center text-gray-600 mb-12 text-lg">
             Des plats sélectionnés qui vont vous époustoufler ! 🌈✨
@@ -54,24 +74,10 @@ function Home() {
               ))
             )}
           </div>
-          <div className="mt-12 text-center">
-            <div className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 p-8 rounded-3xl shadow-2xl inline-block transform -rotate-1">
-              <p className="text-3xl font-black text-white mb-4">
-                Prêt à cuisiner funky ? 🎉
-              </p>
-              <Link
-                to={`/about`}
-                className="inline-block bg-white text-purple-600 px-8 py-4 rounded-full font-bold hover:bg-yellow-300 transition-all hover:scale-105 transform shadow-xl"
-                data-discover="true"
-              >
-                Découvrez notre toute nouvelle page « À propos »
-              </Link>
-            </div>
-          </div>
         </div>
       </div>
     </>
   );
 }
 
-export default Home;
+export default AllDishes;

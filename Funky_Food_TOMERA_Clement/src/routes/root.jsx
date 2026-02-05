@@ -3,6 +3,8 @@ import ErrorPage from "../pages/404";
 import Article from "../pages/article";
 import Home from "../pages/home";
 import App from "../App";
+import About from "../pages/about";
+import AllDishes from "../pages/allDishes";
 
 const router = createBrowserRouter([
   {
@@ -17,6 +19,14 @@ const router = createBrowserRouter([
       {
         path: "/dish/:dishId",
         element: <Article />,
+      },
+      {
+        path: "/about",
+        element: <About />,
+      },
+      {
+        path: "/all",
+        element: <AllDishes />,
       },
     ],
   },
